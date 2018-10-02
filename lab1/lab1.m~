@@ -1,0 +1,4 @@
+info_jpg = imfinfo('lena.jpg')
+info_bmp = imfinfo('lena.bmp')
+
+img_jpg = 
