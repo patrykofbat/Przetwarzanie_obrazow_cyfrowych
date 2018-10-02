@@ -12,3 +12,19 @@ img_bmp_gray = rgb2gray(img_bmp);
 imshow(img_bmp_gray);
 
 imwrite(img_bmp_gray, 'lena_gray.bmp');
+
+figure;
+
+colormap gray;
+
+mesh(img_bmp_gray)
+
+figure;
+
+plot(img_bmp_gray(10,:));
+
+figure;
+
+plot(img_bmp_gray(:,10));
+
+
