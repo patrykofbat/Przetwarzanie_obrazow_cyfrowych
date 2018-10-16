@@ -1,0 +1,43 @@
+clear vars
+close all
+clc
+
+
+img = imread('archiwum/lena.bmp');
+
+nImg = imresize(img,[128,128],'nearest');
+
+
+nImg_2 = imadjust(img, [0 31/255]);
+
+figure;
+imshow(nImg_2);
+
+
+nImg_3 = imadjust(img, [0 15/255]);
+
+figure;
+imshow(nImg_3);
+
+
+nImg_4 = imadjust(img, [0 7/255]);
+
+figure;
+imshow(nImg_4);
+
+nImg_5 = imadjust(img, [0 3/255]);
+
+figure;
+imshow(nImg_5);
+
+
+nImg_6 = imadjust(img, [0 1/255]);
+
+figure;
+imshow(nImg_6);
+
+subplot(2,1,1);
+imshow(nImg_2);
+subplot(2,1,2);
+
+
