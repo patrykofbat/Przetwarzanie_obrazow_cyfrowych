@@ -1,0 +1,12 @@
+clearvars;
+close all;
+clc;
+
+
+img_1 = imread('pointbased/lena.bmp');
+img_2 = imread('pointbased/jet.bmp');
+
+K = imadd(img_1, img_2);
+
+imsh
+

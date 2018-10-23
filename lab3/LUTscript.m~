@@ -1,0 +1,34 @@
+clearvars;
+close all;
+clc;
+
+load pointbased/funkcjeLUT.mat
+
+figure(1);
+plot(kwadratowa);
+
+imgLena = imread('pointbased/lena.bmp');
+
+figure(2);
+imshow(imgLena);
+
+
+A = intlut(uint8(imgLena), kwadratowa);
+
+figure(3);
+imshow(A);
+
+
+figure(4);
+LUT(imgLena, kwadratowa);
+
+LUT(imgLena, log);
+
+
+LUT(imgLena, odwlog);
+
+
+LUT(imgLena, odwrotna);
+
+
+LUT(imgLena, pierwistk);
