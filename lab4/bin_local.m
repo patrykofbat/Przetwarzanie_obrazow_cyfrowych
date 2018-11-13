@@ -4,7 +4,7 @@ clc;
 
 img = imread('katalog.bmp');
 
-[X Y] = size(img);
+[X, Y] = size(img);
 
 obrazbw = img;
 
