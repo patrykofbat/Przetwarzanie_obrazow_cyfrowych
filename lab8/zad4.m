@@ -2,24 +2,28 @@ close all;
 clearvars;
 clc;
 
-SE = strel('line', 10, 45); 
-img = imread('9_KrawedzieHough/dom.png');
-img_bw = im2bw(img);
+img = imread('9_KrawedzieHough/lab112.png');
+img = im2bw(img, 60/255);
 
-img = imdilate(img_bw, SE);
-img_edge = edge(img_bw, 'Canny');
+img = not(img);
+img = imclearborder(img);
+img = not(img);
+
+SE = strel('square', 5);
+img = imclose(img, SE);
+img_edge = edge(img, 'canny');
 figure(1);
-imshow(img_bw);
+imshow(img, []);
 
 
 
 
 
-[H, theta, rho]  = hough(img_edge, 'RhoResolution', 1, 'ThetaResolution', 1);
-A = houghpeaks(H, 15);
-lines = houghlines(img,theta,rho, A,'FillGap',5,'MinLength',7);
+[H, theta, rho]  = hough(img_edge);
+A = houghpeaks(H, 8);
+lines = houghlines(img_edge,theta,rho, A,'FillGap',5,'MinLength',7);
 figure(2);
-imshow(img); 
+imshow(img, []); 
 hold on;
 max_len = 0;
 for k = 1:length(lines)

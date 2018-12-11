@@ -26,7 +26,7 @@ hold off;
 
 
 
-lines = houghlines(img,theta,rho, A,'FillGap',5,'MinLength',7);
+lines = houghlines(img_edge,theta,rho, A,'FillGap',5,'MinLength',7);
 figure(3);
 imshow(img); 
 hold on;
